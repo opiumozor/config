@@ -1,0 +1,89 @@
+#--------------------------------------
+# .zshrc by Alexis 'Opiumozor' Bernard
+#--------------------------------------
+
+# AUTO-COMPLETION AND GLOBBING
+
+zmodload zsh/complist
+autoload -U compinit
+setopt extendedglob
+setopt correctall
+compinit
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh_cache
+zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
+
+# PROMPT SETTING
+
+autoload -U promptinit
+autoload -U colors
+promptinit
+colors
+RPROMPT="[%{$fg_bold[red]%}%n%{$fg_no_bold[white]%}@%{$fg_bold[red]%}%m%{$reset_color%}]"
+PROMPT="[%{$fg_bold[green]%}%~%{$reset_color%}] $prompt_newline$> "
+
+# ALIAS
+
+alias ls='ls -GFh' #--color=auto
+alias l='ls -l'
+alias la='ls -la'
+alias cp='cp -v'
+alias mv='mv -v'
+alias rm='rm -v'
+alias emacs='emacs -nw'
+alias ne='emacs'
+alias grep='grep --color=auto'
+
+# SET ENV
+
+export EDITOR=emacs
+
+# SETTING ZSH PROPRIETIES                                                                                                                                    
+
+setopt ZLE
+setopt BG_NICE
+setopt CORRECT
+setopt BSD_ECHO
+setopt HASH_CMDS
+setopt HASH_DIRS
+setopt AUTO_LIST
+setopt AUTO_MENU
+setopt LIST_TYPES
+setopt CORRECT_ALL
+setopt AUTO_RESUME
+setopt HASH_LIST_ALL
+setopt ALWAYS_TO_END
+setopt LIST_AMBIGUOUS
+setopt LONG_LIST_JOBS
+setopt AUTO_PARAM_SLASH
+setopt COMPLETE_ALIASES
+setopt COMPLETE_IN_WORD
+setopt FUNCTION_ARGZERO
+setopt ALWAYS_LAST_PROMPT
+setopt INTERACTIVE_COMMENTS
+
+unsetopt HUP
+unsetopt BEEP
+unsetopt LIST_BEEP
+unsetopt HIST_BEEP
+unsetopt ALL_EXPORT
+unsetopt GLOBAL_RCS
+unsetopt MAIL_WARNING
+unsetopt RM_STAR_SILENT
+
+bindkey -e
+
+# CUSTOM COMMANDS
+
+clean()
+{
+    SEARCH='.'
+    if [ ${1} ]
+    then
+        SEARCH=${1}
+    fi
+    find ${SEARCH} \( -name "*~" -or -name ".*~" \) -exec rm -fv {} \;
+}
