@@ -97,6 +97,16 @@ alias grep='grep --color=auto'
 alias docker_start=". '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'"
 alias docker_cclean='docker rm $(docker ps -a -q)'
 alias docker_iclean='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+alias activate='source ./env/bin/activate'
+alias gco='git checkout'
+alias gs='git status'
+alias gss='git status --short'
+alias gd='git diff --color | diff-so-fancy | less'
+alias ga='git add'
+alias gaa='git add -A'
+alias gc='git commit -m'
+alias gp='git push'
+alias glog='git log --graph --decorate --oneline --color --all'
 
 # SET ENV
 export EDITOR=emacs
