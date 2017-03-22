@@ -107,6 +107,7 @@ alias gaa='git add -A'
 alias gc='git commit -m'
 alias gp='git push'
 alias glog='git log --graph --decorate --oneline --color --all'
+alias gpl='git pull'
 
 # SET ENV
 export EDITOR=emacs
