@@ -108,6 +108,7 @@ alias gc='git commit -m'
 alias gp='git push'
 alias glog='git log --graph --decorate --oneline --color --all'
 alias gpl='git pull'
+alias grebase='git pull --rebase origin master'
 
 # SET ENV
 export EDITOR=emacs
