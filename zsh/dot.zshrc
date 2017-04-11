@@ -109,6 +109,7 @@ alias gp='git push'
 alias glog='git log --graph --decorate --oneline --color --all'
 alias gpl='git pull'
 alias grebase='git pull --rebase origin master'
+alias fr='t=$(($(tput cols)/3));for FR in $(seq $(tput lines));do printf "\e[44m%${t}s\e[47m%${t}s\e[41m%${t}s\e[0m\n";done;'
 
 # SET ENV
 export EDITOR=emacs
