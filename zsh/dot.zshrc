@@ -85,24 +85,35 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # ALIAS
+
+# ls
 if [[ $OSTYPE = darwin* ]]; then
   alias ls="ls -GFh"
 else
   alias ls="ls -Fh --color=auto"
 fi
-
 alias l='ls -l'
 alias la='ls -la'
+
+# basics
 alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -v'
+alias grep='grep --color=auto'
+
+# emacs
 alias emacs='/usr/local/Cellar/emacs/25.1/Emacs.app/Contents/MacOS/Emacs -nw'
 alias ne='emacs'
-alias grep='grep --color=auto'
+
+# docker
 alias docker_start=". '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'"
 alias docker_cclean='docker rm $(docker ps -a -q)'
 alias docker_iclean='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+
+# python
 alias activate='source ./env/bin/activate'
+
+# git
 alias gco='git checkout'
 alias gs='git status'
 alias gss='git status --short'
@@ -114,6 +125,8 @@ alias gp='git push'
 alias glog='git log --graph --decorate --oneline --color --all'
 alias gpl='git pull'
 alias grebase='git pull --rebase origin master'
+
+# misc
 alias fr='t=$(($(tput cols)/3));for FR in $(seq $(tput lines));do printf "\e[44m%${t}s\e[47m%${t}s\e[41m%${t}s\e[0m\n";done;'
 
 # SET ENV
