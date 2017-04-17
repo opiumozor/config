@@ -1,19 +1,3 @@
-;;
-;;
-;; Filename: .emacs
-;; Description: My personnal emacs configuration file.
-;;              Require emacs 24 or > & Xterm-256 colors to work properly.
-;;
-;; Author: Alexis Bernard
-;; Email: alexis.bernard33@gmail.com
-;;
-;; Created: Mon Mar 24 23:01:29 2014 (+0100)
-;; Last-Updated: Wed Jan 20 15:10:00 2016 (+0100)
-;;           By: Alexis Bernard
-;;     Update #: 113
-;;
-;;
-
 ;; Remove (the useless) startup message
 (setq inhibit-startup-message t)
 
@@ -49,7 +33,7 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;; Auto-pair
-(add-to-list 'load-path "~/.emacs.d/autopair")
+(add-to-list 'load-path "~/.config/emacs/dot.emacs.d/autopair")
 (require 'autopair)
 (autopair-global-mode)
 
@@ -76,13 +60,13 @@
 (global-set-key [f3] 'vectra-man-on-word)
 
 ;; Auto-complete mod
-(add-to-list 'load-path "~/.emacs.d/auto-complete")
+(add-to-list 'load-path "~/.config/emacs/dot.emacs.d/auto-complete")
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
+(add-to-list 'ac-dictionary-directories "~/.config/emacs/dot.emacs.d/auto-complete/dict")
 (ac-config-default)
 
 ;; Header generation
-(add-to-list 'load-path "~/.emacs.d/header")
+(add-to-list 'load-path "~/.config/emacs/dot.emacs.d/header")
 (require 'header2)
 (add-hook 'write-file-hooks 'auto-update-file-header)
 (global-set-key (kbd "C-x C-h") 'make-header)
@@ -104,7 +88,7 @@
 (set-face-foreground 'highlight nil)
 
 ;; Custom theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'custom-theme-load-path "~/.config/emacs/dot.emacs.d/themes")
 (load-theme 'ample t)
 
 ;; 80 column rule
@@ -122,11 +106,11 @@
 ;; Remove white space (must be after header generation)
 (add-hook 'after-save-hook 'delete-trailing-whitespace)
 
-;; Move autosave files (#foo#) and backup files (foo~) in ~/.emacs.d/
+;; Move autosave files (#foo#) and backup files (foo~) in ~/.config/emacs/dot.emacs.d/
 (custom-set-variables
-  '(auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
-  '(backup-directory-alist '((".*" . "~/.emacs.d/backups/"))))
-(make-directory "~/.emacs.d/autosaves/" t)
+  '(auto-save-file-name-transforms '((".*" "~/.config/emacs/dot.emacs.d/autosaves/\\1" t)))
+  '(backup-directory-alist '((".*" . "~/.config/emacs/dot.emacs.d/backups/"))))
+(make-directory "~/.config/emacs/dot.emacs.d/autosaves/" t)
 
 ;; Switch between buffers
 (global-set-key (kbd "C-c <left>")  'windmove-left)
@@ -135,5 +119,5 @@
 (global-set-key (kbd "C-c <down>")  'windmove-down)
 
 ;; Scala mode
-(add-to-list 'load-path "~/.emacs.d/scala-mode2/")
+(add-to-list 'load-path "~/.config/emacs/dot.emacs.d/scala-mode2/")
 (require 'scala-mode2)

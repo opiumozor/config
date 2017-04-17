@@ -91,7 +91,7 @@ alias la='ls -la'
 alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -v'
-alias emacs='emacs -nw'
+alias emacs='/usr/local/Cellar/emacs/25.1/Emacs.app/Contents/MacOS/Emacs -nw'
 alias ne='emacs'
 alias grep='grep --color=auto'
 alias docker_start=". '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'"
@@ -131,6 +131,14 @@ clean()
 
 # THEME CFG
 BULLETTRAIN_PROMPT_CHAR=\>
-BULLETTRAIN_PROMPT_SEPARATE_LINE=true
-BULLETTRAIN_TIME_SHOW=false
-BULLETTRAIN_DIR_CONTEXT_SHOW=false
+BULLETTRAIN_PROMPT_ORDER=(
+    status
+    custom
+    dir
+    perl
+    ruby
+    virtualenv
+    go
+    git
+    hg
+)
