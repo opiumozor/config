@@ -85,7 +85,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # ALIAS
-alias ls='ls -GFh' #--color=auto
+if [[ $OSTYPE = darwin* ]]; then
+  alias ls="ls -GFh"
+else
+  alias ls="ls -Fh --color=auto"
+fi
+
 alias l='ls -l'
 alias la='ls -la'
 alias cp='cp -v'
