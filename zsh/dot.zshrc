@@ -128,6 +128,7 @@ alias grebase='git pull --rebase origin master'
 
 # misc
 alias fr='t=$(($(tput cols)/3));for FR in $(seq $(tput lines));do printf "\e[44m%${t}s\e[47m%${t}s\e[41m%${t}s\e[0m\n";done;'
+alias update_recharge_config="~/Work/customcheckout/env/bin/fab -f ~/Work/customcheckout/fabfile/digital_ocean.py ssh_config:key='~/.ssh/recharge',user='alex' > ~/.ssh/config.d/recharge;sed -ie '$ d' ~/.ssh/config.d/recharge"
 
 # SET ENV
 export EDITOR=emacs
