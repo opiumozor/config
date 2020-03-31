@@ -134,7 +134,7 @@ alias update_recharge_config="~/Work/customcheckout/env/bin/fab -f ~/Work/custom
 export EDITOR=emacs
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:/Users/opiumozor/Library/Python/2.7/bin
 export ANSIBLE_HOSTS=~/.ansible_hosts
 
 # CUSTOM COMMANDS
