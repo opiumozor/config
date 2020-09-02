@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/opiumozor/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -37,6 +37,9 @@ ENABLE_CORRECTION="true"
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Disable folder check
+ZSH_DISABLE_COMPFIX="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -134,7 +137,7 @@ alias update_recharge_config="~/Work/customcheckout/env/bin/fab -f ~/Work/custom
 export EDITOR=emacs
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export PATH=$PATH:/usr/local/go/bin:/Users/opiumozor/Library/Python/2.7/bin:/Users/opiumozor/Library/Python/3.7/bin
+export PATH=$PATH:/usr/local/go/bin:$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.7/bin
 export ANSIBLE_HOSTS=~/.ansible_hosts
 
 # CUSTOM COMMANDS
